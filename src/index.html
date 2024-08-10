@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles and Bootstrap files import -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&#038;display=swap"
+      rel="stylesheet"
+    />
+    <script src="bootstrap/bootstrap.js"></script>
+    <link rel="icon" href="../images/logo.png" type="image/icon type" />
+    <title>Passport Generator App</title>
+  </head>
+  <!-- The Responsive Design was done using Bootstrap classes only -->
+  <body class="min-vh-100">
+    <main
+      class="container-lg row mx-auto min-vh-100 d-flex justify-content-between py-3"
+    >
+      <div class="header-container">
+        <header class="header d-flex justify-content-center align-items-center">
+          <h1 class="text-primary-emphasis">Passport Generator Application</h1>
+        </header>
+      </div>
+      <div class="content d-flex gap-4 flex-column flex-lg-row">
+        <!-- The left section of the page container including the input fields-->
+        <div
+          class="left-container col-12 col-lg-4 d-flex flex-column align-self-center px-4 py-4"
+        >
+          <form class="input-form" id="formId">
+            <div class="mb-4">
+              <label for="inputName">Full Name</label>
+              <input
+                type="text"
+                id="inputName"
+                class="form-control"
+                minlength="2"
+                maxlength="25"
+                pattern="[A-Za-z\s]+"
+                placeholder="Enter Full Name"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="inputID">ID Card Number</label>
+              <input
+                type="text"
+                id="inputID"
+                class="form-control"
+                minlength="2"
+                maxlength="15"
+                pattern="\d*"
+                placeholder="Enter a valid ID Number"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="inputBirth">Birthdate</label>
+              <input
+                type="date"
+                id="inputBirth"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="inputMob">Mobile Number</label>
+              <input
+                maxlength="13"
+                type="text"
+                id="inputMob"
+                class="form-control"
+                pattern="\+\d*"
+                placeholder="Mobile Number (Must start with +)"
+                required
+              />
+            </div>
+            <div class="d-flex w-100 justify-content-center">
+              <button class="btn btn-outline-primary" type="submit">
+                Generate
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- The right section of the page container including Result and Recents sections -->
+        <div
+          class="right-container col-12 col-lg-8 d-flex justify-content-center flex-column px-4"
+        >
+          <h2 class="text-primary-emphasis py-2">Result</h2>
+          <div
+            class="result-container d-flex flex-column col-12 align-items-center"
+          >
+            <div
+              class="card-info col-12 result border rounded-4 border-dark p-2 d-flex flex-column flex-sm-row gap-4 gap-sm-0 align-items-center"
+            >
+              <img
+                src="../images/photo.png"
+                alt="photo"
+                class="col-3 avatar rounded-circle rounded-5 border border-dark me-2 ms-2"
+              />
+
+              <div
+                class="card-info-inner col-9 ms-3 d-flex flex-column justify-content-center"
+              >
+                <p class="fw-bold">Name: <span id="result-name"></span></p>
+                <p class="fw-bold">ID: <span id="result-id"></span></p>
+                <p class="fw-bold">
+                  Passport Number: <span id="result-passportnum"></span>
+                </p>
+                <p class="fw-bold m-0">
+                  Release Date: <span id="result-date"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="recent-3">
+            <div
+              class="recents-container d-flex flex-column gap-3 justify-content-center"
+              id="recents"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./main.js" type="module"></script>
+    <script src="./utils.js" type="module"></script>
+  </body>
+</html>

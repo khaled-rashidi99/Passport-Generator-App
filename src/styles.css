@@ -1,0 +1,59 @@
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  height: fit-content;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 0 5px #052c65;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.content {
+  height: fit-content;
+}
+
+.avatar {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+.card-info {
+  height: fit-content;
+}
+
+p > span {
+  font-weight: normal;
+  color: #052c65;
+}
+
+p {
+  color: #052c65;
+  font-size: large;
+}
+
+label {
+  font-weight: 500;
+  color: #546e7a;
+  font-size: large;
+}
+
+.card-info {
+  box-shadow: 0 0 5px #052c65;
+  width: 100%;
+}
+
+.result {
+  box-shadow: 0 0 5px #052c65;
+  width: 100%;
+}
